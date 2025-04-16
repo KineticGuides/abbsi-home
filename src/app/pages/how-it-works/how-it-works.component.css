@@ -1,0 +1,19 @@
+
+    .step-icon {
+      font-size: 2rem;
+      color: #6f42c1;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .step-card {
+      border: none;
+      background-color: #f8f9fa;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: box-shadow 0.3s;
+    }
+    .step-card:hover {
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }

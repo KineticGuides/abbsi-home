@@ -1,0 +1,15 @@
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .subheading {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #0d6efd;
+  }
+  .info-box {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    margin-bottom: 1.5rem;
+  }

@@ -1,0 +1,24 @@
+<body class="body-color">
+    <div class="coming-soon-area">
+        <div class="container">
+                <div class="coming-soon-content">
+                    <h2 class="heading-text display-6 fw-semibold py-2">Coming Soon</h2>
+
+                    <div id="timer" class="flex-wrap d-flex justify-content-center pt-4">
+                        <div id="days" class="align-items-center flex-column d-flex justify-content-center mb-2">218<span class="fs-5 fw-normal">Days</span></div>
+                        <div id="hours" class="align-items-center flex-column d-flex justify-content-center mb-2">18<span class="fs-5 fw-normal">Hours</span></div>
+                        <div id="minutes" class="align-items-center flex-column d-flex justify-content-center mb-2">22<span class="fs-5 fw-normal">Minutes</span></div>
+                        <div id="seconds" class="align-items-center flex-column d-flex justify-content-center mb-2">14<span class="fs-5 fw-normal">Seconds</span></div>
+                    </div> 
+
+                    <form class="newsletterform" id="newsletterform" action="send-email.php" method="POST" novalidate>
+                        <div class="form-group has-error has-danger">
+                            <input type="email" class="input-newsletter" placeholder="Enter your email" name="news_email" required="" aria-label="newsletter_email" autocomplete="off">
+                        </div> 
+                        <button type="submit" name="newsletter" class="primary-btn w-100">Subscribe</button>
+                    </form>
+                    <div id="newsmessage" class="d-none"></div>
+                </div>
+            </div>
+    </div>
+</body>

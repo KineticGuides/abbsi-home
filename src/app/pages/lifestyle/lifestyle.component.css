@@ -1,0 +1,14 @@
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .info-box {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    margin-bottom: 1.5rem;
+  }
+  .info-box h5 {
+    font-weight: bold;
+    color: #0d6efd;
+  }

@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="contact-us-box py-2 px-3 p-lg-12">
+        <div class="row" style="width:100%">
+            <div class="col-lg-12">
+                <div class="">
+                    <h3 class="primary-text">Login to your account</h3>
+                 </div>
+            </div>
+            <div class="row">
+
+            <div class="col-lg-2    ">
+            </div>   
+            <div class="col-lg-8">   
+                <div class="container">
+                    <div class="card content-section mb-4">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3 style="font-size: 18px; line-height: 24px; margin-top: 10px;">Sign In</h3>
+                                </div>
+                                <div class="col-md-6" style="text-align:right;">
+                                    <button class="btn btn-secondary" [routerLink]="['/get-started']">Create Account</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                         
+                            <p class="card-text"></p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form method="post" novalidate="novalidate" data-gtm-form-interact-id="0">
+                                                                
+                                        <div class="form-group">
+                        <label for="UserName">Email</label>
+                    
+                    
+                <input class="form-control valid" data-val="true" data-val-required="'Email' must not be empty." id="UserName" name="UserName" placeholder="Email" type="text" value="" data-gtm-form-interact-field-id="0" aria-describedby="UserName-error" aria-invalid="false">    
+                
+                    <span class="invalid-feedback field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span></div>	
+                <div class="form-group">
+                        <label for="Password">Password</label>
+                    
+                    
+                <div class="input-group">
+                    <input class="form-control password valid" data-val="true" data-val-required="'Password' must not be empty." id="Password" name="Password" placeholder="Password" type="password" value="" data-gtm-form-interact-field-id="1" aria-describedby="Password-error" aria-invalid="false">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary show-hide-password pl-3 pr-3 p-0" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg></button>
+                    </div>
+                </div>    
+                
+                    <span class="invalid-feedback field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span></div>	
+                
+                                        <div class="float-right">
+                                            <button [routerLink]="['/my-profile']"  class="submit" class="btn btn-primary mb-3 da_button_next" style="width:125px;">Next</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="float-left">
+                                        <a class="da_link_contact-support" href="">
+                                            Contact
+                                            Support
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="float-right">
+                                        <a class="da_link_forgot-password" [routerLink]="['/forgot-password']">
+                                            Forgot
+                                            Password?
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="formstatusmessage" class="d-none"></div>
+            </div>
+    </div>
+</div>
