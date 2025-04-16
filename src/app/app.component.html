@@ -58,7 +58,7 @@
                     type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-label="Toggle navigation">
                     <i class="fa fa-bars fs-4 text-white"></i>
                 </button>
-                <div class="offcanvas offcanvas-start" id="offcanvasNav">
+                <div class="offcanvas offcanvas-start" id="offcanvasNav" #offcanvasNav>
                     <div class="offcanvas-header">
                         <a class="img-fluid navbar-brand d-block d-lg-none" [routerLink]="['/']"><img src="/assets/img/logo/logo.png"
                             alt="logo-img"></a>
@@ -74,39 +74,39 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Program Goals</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item dropdown-item"><a class="nav-link fw-bold"  [routerLink]="['/longevity']">Longevity</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/mental-focus']">Mental Focus</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/stamina']">Stamina</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/weght-loss']">Weight Loss</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/sexual-function']">Sexual Function</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/appearance']">Appearance</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/muscle-gain']">Muscle Gain</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/belly-fat']">Belly Fat Reduction</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/stress-levels']">Stress Levels</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/immune-system']">Immune System</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/chronic-disease']">Chronic Disease</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link fw-bold"  [routerLink]="['/longevity']" (click)="closeOffcanvas()">Longevity</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/mental-focus']" (click)="closeOffcanvas()">Mental Focus</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/stamina']" (click)="closeOffcanvas()">Stamina</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/weght-loss']" (click)="closeOffcanvas()">Weight Loss</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/sexual-function']" (click)="closeOffcanvas()">Sexual Function</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/appearance']" (click)="closeOffcanvas()">Appearance</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/muscle-gain']" (click)="closeOffcanvas()">Muscle Gain</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/belly-fat']" (click)="closeOffcanvas()">Belly Fat Reduction</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/stress-levels']" (click)="closeOffcanvas()">Stress Levels</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/immune-system']" (click)="closeOffcanvas()">Immune System</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/chronic-disease']" (click)="closeOffcanvas()">Chronic Disease</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Protocols</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/lifestyle']">Lifestyle Changes</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/supplements']">Supplements</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/peptides']">Peptides</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/medications']">Medications</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/lifestyle']" (click)="closeOffcanvas()">Lifestyle Changes</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/supplements']" (click)="closeOffcanvas()">Supplements</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/peptides']" (click)="closeOffcanvas()">Peptides</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/medications']" (click)="closeOffcanvas()">Medications</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Learn</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/learn-healthy-living']">Healthy Living</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/learn-peptides']">Peptides</a></li>
-                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/learn-supplements']">Supplements</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/learn-healthy-living']" (click)="closeOffcanvas()">Healthy Living</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/learn-peptides']" (click)="closeOffcanvas()">Peptides</a></li>
+                                    <li class="nav-item dropdown-item"><a class="nav-link" [routerLink]="['/learn-supplements']" (click)="closeOffcanvas()">Supplements</a></li>
                                 </ul>
                             </li>
-                            <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/find-physician']">Find a Physician</a></li> 
-                            <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/get-started']">Get Started</a></li>
-                            <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/login']">Login</a></li>
+                            <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/find-physician']" (click)="closeOffcanvas()">Find a Physician</a></li> 
+                            <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/get-started']" (click)="closeOffcanvas()">Get Started</a></li>
+                            <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/login']" (click)="closeOffcanvas()">Login</a></li>
                         </ul>
                     </div>
                 </div>
