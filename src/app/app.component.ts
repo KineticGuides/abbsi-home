@@ -1,11 +1,12 @@
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Component, AfterViewInit, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+import { Component, AfterViewInit, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from './data.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd, Event as RouterEvent } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,14 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent  implements OnInit, AfterViewInit {
   
+  @ViewChild('offcanvasNav', { static: false }) offcanvasNav!: ElementRef;
+
+  closeOffcanvas() {
+    const bsOffcanvas = bootstrap.Offcanvas.getInstance(this.offcanvasNav.nativeElement)
+      || new bootstrap.Offcanvas(this.offcanvasNav.nativeElement);
+    bsOffcanvas.hide();
+  }
+
   data: any;
   formData: any = {country: "", languages: ""};
   colData: any = {country: "", languages: ""};
