@@ -540,7 +540,7 @@ Page Title Area Style
   width: 100%;
 }
 .home-slides{
-  height: 900px;
+  height: 600px;
 }
 .main-banner.item-bg4 {
   background: linear-gradient(to right, rgba(var(--primary-color-overlay), 1) 40%, rgba(var(--primary-color-overlay), 0) 90%),
@@ -579,11 +579,11 @@ Page Title Area Style
 }
 
 .main-banner {
-  min-height: 900px;
-  height: 900px;
+  min-height: 600px;
+  height: 600px;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   
 }
 
