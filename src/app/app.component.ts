@@ -19,11 +19,33 @@ export class AppComponent  implements OnInit, AfterViewInit {
   
   @ViewChild('offcanvasNav', { static: false }) offcanvasNav!: ElementRef;
 
+  
   closeOffcanvas() {
-    const bsOffcanvas = bootstrap.Offcanvas.getInstance(this.offcanvasNav.nativeElement)
-      || new bootstrap.Offcanvas(this.offcanvasNav.nativeElement);
-    bsOffcanvas.hide();
+    // Close mobile offcanvas
+    const offcanvasEl = document.querySelector('.offcanvas.show');
+    if (offcanvasEl) {
+      const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+      offcanvas?.hide();
+    }
+  
+    // Desktop: prevent dropdown from reappearing via hover
+    if (window.innerWidth >= 992) {
+      const dropdownParents = document.querySelectorAll('.navbar .nav-item.dropdown');
+  
+      dropdownParents.forEach((parent) => {
+        parent.classList.add('dropdown-closed'); // 👈 block hover
+      });
+  
+      setTimeout(() => {
+        dropdownParents.forEach((parent) => {
+          parent.classList.remove('dropdown-closed'); // 👈 allow hover again
+        });
+      }, 500);
+    }
   }
+  
+  
+ 
 
   data: any;
   formData: any = {country: "", languages: ""};
@@ -47,7 +69,7 @@ export class AppComponent  implements OnInit, AfterViewInit {
         this.showWrapper = event.urlAfterRedirects === '/' 
         || event.urlAfterRedirects === '/home'
         || event.urlAfterRedirects === '/how-it-works'
-        || event.urlAfterRedirects === '/longevitiy'
+        || event.urlAfterRedirects === '/longevity'
         || event.urlAfterRedirects === '/muscle-gain'
         || event.urlAfterRedirects === '/mental-focus'
         || event.urlAfterRedirects === '/belly-fat'
@@ -63,7 +85,7 @@ export class AppComponent  implements OnInit, AfterViewInit {
         || event.urlAfterRedirects === '/peptides'
         || event.urlAfterRedirects === '/medications'
         || event.urlAfterRedirects === '/learn-supplements'
-        || event.urlAfterRedirects === '/learn-healthy'
+        || event.urlAfterRedirects === '/learn-healthy-living'
         || event.urlAfterRedirects === '/learn-peptides'
         || event.urlAfterRedirects === '/find-physician'
 
@@ -75,7 +97,6 @@ export class AppComponent  implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
     this._dataService.getData(this.path, this.id, this.id2, this.id3).subscribe((data: any)=> { 
       this.data=data;
       this.formData=data['formData'];
@@ -87,10 +108,10 @@ export class AppComponent  implements OnInit, AfterViewInit {
 
   }
 
-  ngAfterViewInit(): void {  
-
+  ngAfterViewInit(): void {
 
   }
+
 
   toggleOpen(m:any) {
     console.log(m)
