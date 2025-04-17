@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from '../../data.service'; 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchFilterPipe } from '../../search-filter.pipe';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -21,6 +22,8 @@ export class LoginComponent   implements OnInit {
   searchText: string = '';
   p: any = 1;
   showing: string = 'N';
+  email: any = '';
+  password: any = '';
   
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -86,16 +89,17 @@ export class LoginComponent   implements OnInit {
 
   }
 
-  postForm(): void {
-  
-    let formData: any = { "message": this.message }
-
-    this._dataService.postData("post-get-started", this.data.formData).subscribe((data: any)=> { 
-      console.log(data.location)
-      this._router.navigate([data.location]);
-      console.log(this.data)
-  }) 
-
+  postLogin(): void {
+    let formData: any = { "email": this.email, "password": this.password  }
+        this._dataService.postData("post-web-login", formData).subscribe((data: any)=> { 
+            if (data.error=="0") {
+              localStorage.setItem('uid',data.id);
+              this._router.navigate(['/my-profile']);
+            } else {
+                this.message=data.message              
+            }
+            console.log(this.data)
+        }) 
   }
 
 

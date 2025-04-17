@@ -7,11 +7,12 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from '../../data.service'; 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchFilterPipe } from '../../search-filter.pipe';
+import { NavMenuComponent } from '../../controls/nav-menu/nav-menu.component';
 
 @Component({
   selector: 'app-my-orders',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule, SearchFilterPipe, NgxPaginationModule],
+  imports: [CommonModule, RouterLink, FormsModule, SearchFilterPipe, NgxPaginationModule, NavMenuComponent],
   templateUrl: './my-orders.component.html',
   styleUrl: './my-orders.component.css'
 })

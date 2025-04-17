@@ -12,7 +12,7 @@
                 <div id="formstatusmessage" class="d-none"></div>
                 <div class="contact-us-form ps-lg-5  wow animate__fadeInUp" data-wow-duration="1.8s" style="visibility: visible; animation-duration: 1.8s; animation-name: fadeInUp;">
                     <div class="contact-form">
-                        <form id="ContactForm" novalidate="novalidate">
+                        <form id="ContactForm">
                             <div class="row">
                                 <div class="form-group col-md-6 mb-4">
                                     <input [(ngModel)]="data.formData['first_name']" tabindex="1" type="text" name="name" class="form-control" id="name" placeholder="First Name" aria-label="user name" required="">
@@ -132,7 +132,6 @@
                                     <select tabindex="11" [(ngModel)]="data.formData['peptides']" type="text" name="name" class="form-control" id="name" placeholder="Visit Type" aria-label="user name" required="">
                                         <option value="">Are you interested in Peptides?</option>
                                         <option value="Yes">Yes, I am interested in Peptides.</option>
-                                        <option value="No">No, I am not interested in Peptides.</option>
                                         <option value="DNK">I need to learn more about Peptides</option>
                                     </select>
                                 </div>
@@ -140,7 +139,6 @@
                                     <select tabindex="12" [(ngModel)]="data.formData['medications']" type="text" name="name" class="form-control" id="name" placeholder="Visit Type" aria-label="user name" required="">
                                         <option value="">Are you interested in Medications?</option>
                                         <option value="Yes">Yes, I am interested in Medications.</option>
-                                        <option value="No">No, I am not interested in Medications.</option>
                                         <option value="DNK">I need to learn more about Medications</option>
                                     </select>
                                 </div>
@@ -148,11 +146,11 @@
                                     <select tabindex=12 [(ngModel)]="data.formData['supplements']" type="text" name="name" class="form-control" id="name" placeholder="Visit Type" aria-label="user name" required="">
                                         <option value="">Are you interested in Supplements?</option>
                                         <option value="Yes">Yes, I am interested in Supplements.</option>
-                                        <option value="No">No, I am not interested in Supplements.</option>
                                         <option value="DNK">I need to learn more about Supplements.</option>
                                     </select>
                                 </div>
                                 <div class="col-md-12"> 
+                                    <span style="color:red"><b>{{ this.data.error_dsc }}</b></span>
                                     <button name="cfform" (click)="postForm();"  type="submit" class="primary-btn" aria-label="subscribe newsletter">Submit Now</button>
                                 </div>
                             </div>

@@ -10,13 +10,13 @@ import { SearchFilterPipe } from '../../search-filter.pipe';
 import { NavMenuComponent } from '../../controls/nav-menu/nav-menu.component';
 
 @Component({
-  selector: 'app-my-account',
+  selector: 'app-my-visits',
   standalone: true,
   imports: [CommonModule, RouterLink, FormsModule, SearchFilterPipe, NgxPaginationModule, NavMenuComponent],
-  templateUrl: './my-account.component.html',
-  styleUrl: './my-account.component.css'
+  templateUrl: './my-visits.component.html',
+  styleUrl: './my-visits.component.css'
 })
-export class MyAccountComponent  implements OnInit {
+export class MyVisitsComponent  implements OnInit {
 
   data: any;
   message: any;

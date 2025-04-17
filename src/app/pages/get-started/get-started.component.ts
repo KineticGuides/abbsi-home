@@ -92,8 +92,15 @@ export class GetStartedComponent  implements OnInit {
     let formData: any = { "message": this.message }
 
     this._dataService.postData("post-get-started", this.data.formData).subscribe((data: any)=> { 
-      console.log(data.location)
-      this._router.navigate([data.location]);
+      if (data.error_code=='0') {
+        this._router.navigate(['/welcome']);
+      }    
+      if (data.error_code=='2') {
+        this._router.navigate(['/account-exists']);
+      }     
+      if (data.error_code=='1') {
+        this.data.error_dsc=data.error_dsc;
+      }     
       console.log(this.data)
   }) 
 

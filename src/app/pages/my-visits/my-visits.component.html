@@ -3,21 +3,21 @@
         <div class="col-lg-12">   
             <div class="container-fluid">
                 <div class="card content-section mb-4">
-                    <app-nav-menu [path]="'my-orders'"></app-nav-menu>
+                    <app-nav-menu [path]="'my-visits'"></app-nav-menu>
                     <div class="card-body" style="min-height: 530px;">
                         <div class="row">
                             <div class="col-md-9">
-                                <h4>My Orders</h4>
+                                <h4>My Visit History</h4>
                             </div>
                             <div class="col-md-3" style="text-align: right;">
-                                <button class="btn btn-success m-2">Place Order</button>
+                                <button class="btn btn-success m-2">Schedule Visit</button>
                             </div>
                         </div>
                         <div class="card m-2">
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-10 pt-2">
-                                        <h4 style="font-size: 16px;">Order History</h4>
+                                        <h4 style="font-size: 16px;">Visit History</h4>
                                     </div>
                                     <div class="col-md-2" style="text-align:right">
 
@@ -29,22 +29,16 @@
                                     <thead>
                                         <tr>
                                             <th style="width:120px; font-size: 13px;">
-                                                Date
+                                                Visit Date
                                             </th>
-                                            <th style="font-size: 13px;">
-                                                Item
+                                            <th style="width:220px; font-size: 13px;">
+                                                Physician
                                             </th>
-                                            <th style="width:120px; font-size: 13px;">
-                                                Reorder<br>Date
-                                            </th>
-                                            <th style="width:120px; font-size: 13px;">
-                                                Price
+                                            <th style="width:320px; font-size: 13px;">
+                                                Notes/Followup Instructions
                                             </th>
                                             <th style="width:120px; font-size: 13px;">
-                                                Autoship
-                                            </th>
-                                            <th style="width:120px; font-size: 13px;">
-
+                                                Visit Type
                                             </th>
                                         </tr>
                                     </thead>

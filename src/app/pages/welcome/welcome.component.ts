@@ -7,16 +7,16 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from '../../data.service'; 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchFilterPipe } from '../../search-filter.pipe';
-import { NavMenuComponent } from '../../controls/nav-menu/nav-menu.component';
+
 
 @Component({
-  selector: 'app-my-account',
+  selector: 'app-welcome',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule, SearchFilterPipe, NgxPaginationModule, NavMenuComponent],
-  templateUrl: './my-account.component.html',
-  styleUrl: './my-account.component.css'
+  imports: [CommonModule, RouterLink, FormsModule, SearchFilterPipe, NgxPaginationModule],
+  templateUrl: './welcome.component.html',
+  styleUrl: './welcome.component.css'
 })
-export class MyAccountComponent  implements OnInit {
+export class WelcomeComponent implements OnInit {
 
   data: any;
   message: any;
@@ -24,8 +24,6 @@ export class MyAccountComponent  implements OnInit {
   p: any = 1;
   showing: string = 'N';
   
-
-
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _dataService: DataService,
@@ -90,13 +88,11 @@ export class MyAccountComponent  implements OnInit {
 
   }
 
-
-
   postForm(): void {
   
     let formData: any = { "message": this.message }
 
-    this._dataService.postData("hey-skipper", formData).subscribe((data: any)=> { 
+    this._dataService.postData("post-get-started", this.data.formData).subscribe((data: any)=> { 
       console.log(data.location)
       this._router.navigate([data.location]);
       console.log(this.data)

@@ -31,6 +31,12 @@ import { BellyFatComponent } from './pages/belly-fat/belly-fat.component';
 import { ChronicDiseaseComponent } from './pages/chronic-disease/chronic-disease.component';
 import { AppearanceComponent } from './pages/appearance/appearance.component';
 import { LearnHealthyLivingComponent } from './pages/learn-healthy-living/learn-healthy-living.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { AccountExistsComponent } from './pages/account-exists/account-exists.component';
+import { MyRecommendationsComponent } from './pages/my-recommendations/my-recommendations.component';
+import { MyLabsComponent } from './pages/my-labs/my-labs.component';
+import { MyVisitsComponent } from './pages/my-visits/my-visits.component';
+import { MyProtocolsComponent } from './pages/my-protocols/my-protocols.component';
 
 
 export const routes: Routes = [  
@@ -41,7 +47,11 @@ export const routes: Routes = [
     { path: 'my-messages', component: MyMessagesComponent, resolve: { data: ResolverService} },
     { path: 'my-support', component: MySupportComponent, resolve: { data: ResolverService} },
     { path: 'my-account', component: MyAccountComponent, resolve: { data: ResolverService} },
-    { path: 'login', component: LoginComponent, resolve: { data: ResolverService} },
+    { path: 'my-recommendations', component: MyRecommendationsComponent, resolve: { data: ResolverService} },
+    { path: 'my-visits', component: MyVisitsComponent, resolve: { data: ResolverService} },
+    { path: 'my-labs', component: MyLabsComponent, resolve: { data: ResolverService} },
+    { path: 'my-protocols', component: MyProtocolsComponent, resolve: { data: ResolverService} },
+    { path: 'login', component: LoginComponent },
     { path: 'how-it-works', component: HowItWorksComponent, resolve: { data: ResolverService} },
     { path: 'get-started', component: GetStartedComponent, resolve: { data: ResolverService} },
     { path: 'weight-loss', component: WeightLossComponent, resolve: { data: ResolverService} },
@@ -66,5 +76,7 @@ export const routes: Routes = [
     { path: 'learn-peptides', component: LearnPeptidesComponent, resolve: { data: ResolverService} },
     { path: 'learn-medications', component: LearnMedicationsComponent, resolve: { data: ResolverService} },
     { path: 'immune-system', component: ImmuneSystemComponent, resolve: { data: ResolverService} },
+    { path: 'welcome', component: WelcomeComponent, resolve: { data: ResolverService} },
+    { path: 'account-exists', component: AccountExistsComponent, resolve: { data: ResolverService} },
 ];
 

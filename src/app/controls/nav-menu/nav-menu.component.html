@@ -1,0 +1,124 @@
+<div class="card-header">
+    <div class="row">
+        <div class="col-md-9">
+            @if (path=='my-profile') {
+            <button class="btn btn-secondary m-2" [routerLink]="['/my-profile']"><div class="icon">
+                <i class="bi bi-activity"></i>
+                  </div>My Health
+            </button>                
+           } 
+           @if (path!='my-profile') {
+            <button class="btn btn-outline-primary m-2" [routerLink]="['/my-profile']"><div class="icon">
+                <i class="bi bi-activity"></i>
+                  </div>My Health
+            </button>                
+           } 
+
+           @if (path=='my-recommendations') {
+            <button class="btn btn-secondary m-2" [routerLink]="['/my-recommendations']"><div class="icon">
+                <i class="bi bi-bag-check"></i>
+                </div>Recommendations
+            </button>
+        }
+           @if (path!='my-recommendations') {
+            <button class="btn btn-outline-primary m-2" [routerLink]="['/my-recommendations']"><div class="icon">
+                <i class="bi bi-bag-check"></i>
+                </div>Recommendations
+            </button>
+        }
+
+        @if (path=='my-protocols') {
+            <button class="btn btn-secondary m-2" [routerLink]="['/my-protocols']"><div class="icon">
+                <i class="bi bi-bag-check"></i>
+              </div>Protocols
+            </button>
+        }
+        @if (path!='my-protocols') {
+                <button class="btn btn-outline-primary m-2" [routerLink]="['/my-protocols']"><div class="icon">
+                    <i class="bi bi-bag-check"></i>
+                  </div>Protocols
+                </button>
+            }
+
+            @if (path=='my-orders') {
+                <button class="btn btn-secondary m-2" [routerLink]="['/my-orders']"><div class="icon">
+                    <i class="bi bi-bag-check"></i>
+                  </div>Orders
+                </button>
+            }
+        @if (path!='my-orders') {
+            <button class="btn btn-outline-primary m-2" [routerLink]="['/my-orders']"><div class="icon">
+                <i class="bi bi-bag-check"></i>
+              </div>Orders
+            </button>
+        }
+
+        @if (path=='my-visits') {
+            <button class="btn btn-secondary m-2" [routerLink]="['/my-visits']"><div class="icon">
+                <i class="bi bi-bag-check"></i>
+              </div>Visits
+            </button>
+        }
+        @if (path!='my-visits') {
+            <button class="btn btn-outline-primary m-2" [routerLink]="['/my-visits']"><div class="icon">
+                <i class="bi bi-bag-check"></i>
+              </div>Visits
+            </button>
+        }
+
+        @if (path=='my-labs') {
+            <button class="btn btn-secondary m-2" [routerLink]="['/my-labs']"><div class="icon">
+                <i class="bi bi-bag-check"></i>
+              </div>Labs
+            </button>
+        }
+        @if (path!='my-labs') {
+            <button class="btn btn-outline-primary m-2" [routerLink]="['/my-labs']"><div class="icon">
+                <i class="bi bi-bag-check"></i>
+              </div>Labs
+            </button>
+        }
+
+        @if (path=='my-messages') {
+            <button class="btn btn-secondary m-2" [routerLink]="['/my-messages']"><div class="icon">
+                <i class="bi bi-chat-right-text"></i>
+              </div>Messages
+            </button>
+        }
+        @if (path!='my-messages') {
+            <button class="btn btn-outline-primary m-2" [routerLink]="['/my-messages']"><div class="icon">
+                <i class="bi bi-chat-right-text"></i>
+              </div>Messages
+            </button>
+        }
+
+        @if (path=='my-support') {
+            <button class="btn btn-secondary m-2" [routerLink]="['/my-support']"><div class="icon">
+                <i class="bi bi-question-circle"></i>
+              </div>Support
+            </button>   
+       }
+        @if (path!='my-support') {
+            <button class="btn btn-outline-primary m-2" [routerLink]="['/my-support']"><div class="icon">
+                <i class="bi bi-question-circle"></i>
+              </div>Support
+            </button>   
+       }
+</div>
+        <div class="col-md-3" style="text-align:right;">
+            @if (path=='my-account') {
+                <button class="btn btn-secondary m-2" [routerLink]="['/my-account']"><div class="icon">
+                    <i class="bi bi-person-square"></i>
+                  </div>Account
+                </button>   
+               }
+
+            @if (path!='my-account') {
+            <button class="btn btn-outline-primary m-2" [routerLink]="['/my-account']"><div class="icon">
+                <i class="bi bi-person-square"></i>
+              </div>Account
+            </button>   
+           }
+
+        </div>
+    </div>
