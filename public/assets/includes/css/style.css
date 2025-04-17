@@ -481,13 +481,20 @@ Page Title Area Style
     top: 150%;
     opacity: 0;
     visibility: hidden;
-    /* transition: 0.5s; */
+    transition: opacity 0.3s ease, top 0.3s ease;
   }
 
   .navbar .nav-item:hover .dropdown-menu {
     top: 100%;
     visibility: visible;
     opacity: 1;
+  }
+
+  /* Prevent dropdown from reappearing immediately */
+  .navbar .nav-item.dropdown-closed:hover .dropdown-menu {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    top: 150% !important;
   }
 }
 
