@@ -1,0 +1,16 @@
+.custom-row-borders {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .custom-row-borders td,
+  .custom-row-borders th {
+    border: none !important;
+    padding: 0.75rem;
+  }
+  
+  .custom-row-borders tbody tr {
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+  }
+  

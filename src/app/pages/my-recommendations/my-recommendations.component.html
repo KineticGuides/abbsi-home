@@ -7,85 +7,178 @@
                     <div class="card-body" style="min-height: 530px;">
                             <h4>ABBSI AI Recommendations</h4>
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card m-2">
-                                        <div class="card-header">
-                                            <h4 style="font-size: 16px;">Lifestyle Recommendations</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <table class="table table-condensed">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Date
-                                                        </th>
-                                                        <th style="font-size: 13px;">
-                                                            Recommendation
-                                                        </th>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Physician<br>Approved
-                                                        </th>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Status
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-
-                                            </table>
-                                        </div>
-                                    </div>
+                                <div class="col-md-6">
                                     <div class="card m-2">
                                         <div class="card-header">
                                             <h4 style="font-size: 16px;">Supplement Recommendations</h4>
                                         </div>
                                         <div class="card-body">
-                                            <table class="table table-condensed">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Date
-                                                        </th>
-                                                        <th style="font-size: 13px;">
-                                                            Recommendation
-                                                        </th>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Physician<br>Approved
-                                                        </th>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Status
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-
-                                            </table>
+                                            @for (m of data.supplements; track m.id) {
+                                                <div class="card p-3 mb-3">
+                                                    <div class="card-header card-title">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <b>{{ m.name }}</b>
+                                                            </div>
+                                                            <div class="col-md-4" style="text-align: right;">
+                                                                <button (click)="toggleM(m)" class="btn btn-outline-success" style="width:100%">Learn More</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @if (m.m=='Y') {
+                                                        <p class="card-text p-3" [innerHTML]="m.card_text"></p>
+                                                        <div class="card-footer bg-white" [innerHTML]="m.card_footer"></div>
+                                                    }
+                                                    <div class="card-footer bg-white">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                Would you like to chat about {{ m.name }}?
+                                                            </div>
+                                                            <div class="col-md-4" style="text-align: right">
+                                                                <button class="btn btn-outline-primary" style="width:100%">Start Chat</button>        
+                                                            </div>
+                                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer bg-white">
+                                                        <div class="row">
+                                                        <div class="col-md-8">
+                                                        Would you like to start {{ m.name }}? 
+                                                        </div>
+                                                        <div class="col-md-4" style="text-align: right;">
+                                                            <button class="btn btn-success" style="width:100%">Start Program</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                            }
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card m-2">
+                                        <div class="card-header">
+                                            <h4 style="font-size: 16px;">Medication Recommendations</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            @for (m of data.medications; track m.id) {
+                                                <div class="card p-3 mb-3">
+                                                    <div class="card-header card-title">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <b>{{ m.name }}</b>
+                                                            </div>
+                                                            <div class="col-md-4" style="text-align: right;">
+                                                                <button (click)="toggleM(m)" class="btn btn-outline-success" style="width:100%">Learn More</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @if (m.m=='Y') {
+                                                        <p class="card-text p-3" [innerHTML]="m.card_text"></p>
+                                                        <div class="card-footer bg-white" [innerHTML]="m.card_footer"></div>
+                                                    }
+                                                    <div class="card-footer bg-white">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                Would you like to chat about {{ m.name }}?
+                                                            </div>
+                                                            <div class="col-md-4" style="text-align: right">
+                                                                <button class="btn btn-outline-primary" style="width:100%">Start Chat</button>        
+                                                            </div>
+                                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer bg-white">
+                                                        <div class="row">
+                                                        <div class="col-md-8">
+                                                        Would you like to submit {{ m.name }} for approval? 
+                                                        </div>
+                                                        <div class="col-md-4" style="text-align: right;">
+                                                            <button class="btn btn-success" style="width:100%">Start Program</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                            }
+                                        </div>
+                                        </div>
                                     <div class="card m-2">
                                         <div class="card-header">
                                             <h4 style="font-size: 16px;">Peptide Recommendations</h4>
                                         </div>
                                         <div class="card-body">
-                                            <table class="table table-condensed">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Date
-                                                        </th>
-                                                        <th style="font-size: 13px;">
-                                                            Recommendation
-                                                        </th>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Physician<br>Approved
-                                                        </th>
-                                                        <th style="width:120px; font-size: 13px;">
-                                                            Status
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-
-                                            </table>
+                                            @for (m of data.peptides; track m.id) {
+                                                <div class="card p-3 mb-3">
+                                                    <div class="card-header card-title">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <b>{{ m.name }}</b>
+                                                            </div>
+                                                            <div class="col-md-4" style="text-align: right;">
+                                                                <button (click)="toggleM(m)" class="btn btn-outline-success" style="width:100%">Learn More</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @if (m.m=='Y') {
+                                                        <p class="card-text p-3" [innerHTML]="m.card_text"></p>
+                                                        <div class="card-footer bg-white" [innerHTML]="m.card_footer"></div>
+                                                    }
+                                                    <div class="card-footer bg-white">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                Would you like to chat about {{ m.name }}?
+                                                            </div>
+                                                            <div class="col-md-4" style="text-align: right">
+                                                                <button class="btn btn-outline-primary" style="width:100%">Start Chat</button>        
+                                                            </div>
+                                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer bg-white">
+                                                        <div class="row">
+                                                        <div class="col-md-8">
+                                                        Would you like to submit {{ m.name }} for approval? 
+                                                        </div>
+                                                        <div class="col-md-4" style="text-align: right;">
+                                                            <button class="btn btn-success" style="width:100%">Start Program</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                            }
+                                        </div>
                                         </div>
                                     </div>
+<!--                                    <div class="col-md-6">
+                                        <div class="card m-2">
+                                            <div class="card-header">
+                                                <h4 style="font-size: 16px;">Lifestyle Recommendations</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <table class="table table-condensed">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width:120px; font-size: 13px;">
+                                                                Date
+                                                            </th>
+                                                            <th style="font-size: 13px;">
+                                                                Recommendation
+                                                            </th>
+                                                            <th style="width:120px; font-size: 13px;">
+                                                                Physician<br>Approved
+                                                            </th>
+                                                            <th style="width:120px; font-size: 13px;">
+                                                                Status
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+    
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+ <!--                               <div class="col-md-6">
                                     <div class="card m-2">
                                         <div class="card-header">
                                             <h4 style="font-size: 16px;">Medication Recommendations</h4>
@@ -112,6 +205,7 @@
                                             </table>
                                         </div>
                                     </div>
+                                    </div> -->
                                 </div>
                             </div>
                     </div>

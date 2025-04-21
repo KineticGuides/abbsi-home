@@ -4,10 +4,76 @@
                 <div class="container-fluid">
                     <div class="card content-section mb-4">
                         <app-nav-menu [path]="'my-profile'"></app-nav-menu>
-                        <div class="card-body" style="min-height: 530px;">
-                            <h4>My Dashboard</h4>
+                        <div class="card-body">
+                            <div class="container my-4">
+                                <h1 class="text-center">Welcome, Edward 👋</h1>
+                                <p class="text-center text-muted">Please complete your intake survey</p>
+                              </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="card shadow-sm ms-3">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Intake Survey Progress</h5>
+
+                                    <p (click)="changePath('goals')">Health & Wellness Goals <span class="float-end">{{ goal_pct }}%</span></p>
+                                    <div (click)="changePath('goals')" class="progress mb-3"><div class="progress-bar bg-success" [style]="'width:'+goal_pct+'%'"></div></div>
+                          
+                                    <p (click)="changePath('medical-history')">Medical History <span class="float-end">{{ medical_history_pct }}%</span></p>
+                                    <div (click)="changePath('medical-history')" class="progress mb-3"><div class="progress-bar bg-info" [style]="'width:'+medical_history_pct+'%'"></div></div>
+                          
+                                    <p (click)="changePath('family-history')">Family History <span class="float-end">{{ family_history_pct }}%</span></p>
+                                    <div (click)="changePath('family-history')" class="progress"><div class="progress-bar bg-warning" [style]="'width:'+family_history_pct+'%'"></div></div>
+                                    
+                                    <p style="margin-top: 20px;" (click)="changePath('diet')">Diet & Nutrition <span class="float-end">{{ diet_pct }}%</span></p>
+                                    <div (click)="changePath('diet')" class="progress mb-3"><div class="progress-bar bg-success" [style]="'width: ' + diet_pct+'%'"></div></div>
+                          
+                                    <p (click)="changePath('exercise')">Exercise & Physical Activity <span class="float-end">{{ exercise_pct }}%</span></p>
+                                    <div (click)="changePath('exercise')" class="progress mb-3"><div class="progress-bar bg-info" [style]="'width:'+exercise_pct+'%'"></div></div>
+                          
+                                    <p (click)="changePath('stress')">Stress & Mental Health <span class="float-end">{{ stress_pct }}%</span></p>
+                                    <div (click)="changePath('stress')" class="progress"><div class="progress-bar bg-warning" [style]="'width:'+stress_pct+'%'"></div></div>
+
+                                    <p style="margin-top: 20px;" (click)="changePath('sleep')">Sleep & Recovery <span class="float-end">{{  sleep_pct }}%</span></p>
+                                    <div (click)="changePath('sleep')" class="progress mb-3"><div class="progress-bar bg-success" [style]="'width:'+sleep_pct+'%'"></div></div>
+                          
+                                    <p (click)="changePath('hormonal')">Hormonal & Metabolic Health <span class="float-end">{{ hormonal_pct }}%</span></p>
+                                    <div (click)="changePath('hormonal')" class="progress mb-3"><div class="progress-bar bg-info" [style]="'width:'+hormonal_pct+'%'"></div></div>
+                          
+                                    <p (click)="changePath('aging')">Aging & Appearance <span class="float-end">{{ data['aging_pct']}}%</span></p>
+                                    <div (click)="changePath('aging')" class="progress"><div class="progress-bar bg-warning" [style]="'width:'+aging_pct+'%'"></div></div>
+
+                                    <p style="margin-top: 20px;" (click)="changePath('lifestyle')">Lifestyle & Substance Use <span class="float-end">{{ lifestyle_pct }}%</span></p>
+                                    <div (click)="changePath('lifestyle')" class="progress mb-3"><div class="progress-bar bg-success" [style]="'width:'+lifestyle_pct+'%'"></div></div>
+                                </div>
+                                </div>
+                              </div>
+                              <div class="col-md-7">
+                                @if(path=='') { <app-survey (next)="doNext()" (close)="doClose($event)" [path]="''">Measurements</app-survey> }
+                                @if(path=='measurements') { <app-survey (next)="doNext()" (close)="doClose($event)" [path]="'measurements'">Measurements</app-survey> }
+                                @if(path=='goals') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'goals'">Health & Wellness Goals</app-survey> }
+                                @if(path=='medical-history') { <app-survey (next)="doNext()" (close)="doClose($event)" [path]="'medical-history'">Medical History</app-survey> }
+                                @if(path=='family-history') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'family-history'">Family History</app-survey> }
+                                @if(path=='diet') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'diet'">Diet & Nutrition</app-survey> }
+                                @if(path=='exercise') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'exercise'">Exercise & Physical Activity</app-survey> }
+                                @if(path=='stress') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'stress'">Stress & Mental Health</app-survey> }
+                                @if(path=='sleep') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'sleep'">Sleep & Recovery</app-survey> }
+                                @if(path=='hormonal') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'hormonal'">Hormonal & Metabolic Health</app-survey> }
+                                @if(path=='aging') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'aging'">Aging & Appearance</app-survey> }
+                                @if(path=='lifestyle') { <app-survey (next)="doNext()" (close)="doClose($event)"  [path]="'lifestyle'">Lifestyle & Substance Use</app-survey> }
+                              </div>
+                        </div>
+
+<div class="row">
+    <div class="col-md-12">
+
+    </div>
+</div>
                 </div>
+            </div>
                 <div id="formstatusmessage" class="d-none"></div>
 </div>
+
+  
+
+  

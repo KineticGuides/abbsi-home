@@ -8,11 +8,13 @@ import { DataService } from '../../data.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchFilterPipe } from '../../search-filter.pipe';
 import { NavMenuComponent } from '../../controls/nav-menu/nav-menu.component';
+import { UploadLabsComponent } from '../../forms/upload-labs/upload-labs.component';
+import { OrderLabsComponent } from '../../forms/order-labs/order-labs.component';
 
 @Component({
   selector: 'app-my-labs',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule, SearchFilterPipe, NgxPaginationModule, NavMenuComponent],
+  imports: [CommonModule, RouterLink, FormsModule, SearchFilterPipe, NgxPaginationModule, NavMenuComponent, UploadLabsComponent, OrderLabsComponent],
   templateUrl: './my-labs.component.html',
   styleUrl: './my-labs.component.css'
 })
@@ -23,9 +25,9 @@ export class MyLabsComponent   implements OnInit {
   searchText: string = '';
   p: any = 1;
   showing: string = 'N';
+  upload_labs: string = 'N';
+  order_labs: string = 'N';
   
-
-
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _dataService: DataService,
@@ -47,7 +49,22 @@ export class MyLabsComponent   implements OnInit {
     } else {
       this.showing='N';
     }
+}
 
+toggleUpload() {
+  if (this.upload_labs=='N') {
+    this.upload_labs='Y'
+  } else {
+    this.upload_labs='N';
+  }
+}
+
+toggleOrder() {
+  if (this.order_labs=='N') {
+    this.order_labs='Y'
+  } else {
+    this.order_labs='N';
+  }
 }
 
   switchUserGeneral(m: any): void { 

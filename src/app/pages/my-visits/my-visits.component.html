@@ -13,38 +13,27 @@
                                 <button class="btn btn-success m-2">Schedule Visit</button>
                             </div>
                         </div>
-                        <div class="card m-2">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col-md-10 pt-2">
-                                        <h4 style="font-size: 16px;">Visit History</h4>
-                                    </div>
-                                    <div class="col-md-2" style="text-align:right">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-condensed">
+                                <table class="table table-striped table-condensed">
                                     <thead>
                                         <tr>
-                                            <th style="width:120px; font-size: 13px;">
-                                                Visit Date
-                                            </th>
-                                            <th style="width:220px; font-size: 13px;">
-                                                Physician
-                                            </th>
-                                            <th style="width:320px; font-size: 13px;">
-                                                Notes/Followup Instructions
-                                            </th>
-                                            <th style="width:120px; font-size: 13px;">
-                                                Visit Type
-                                            </th>
+                                            <th style="width:200px;">Lab Date</th>
+                                            <th style="width:200px;">Laboratory</th>
+                                            <th style="width:280px;">Description</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
-
+                                    <tbody>
+                                        @for (m of data.messages; track m.id) {
+                                            <tr>
+                                                <td style="font-size: 14px;">{{ m.from_name }}</td>
+                                                <td style="font-size: 14px;">{{ m.message_date }}</td>
+                                                <td style="font-size: 14px;">{{ m.message_regarding}}</td>
+                                                <td style="font-size: 14px; text-align:right"><a>Read -></a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
                                 </table>
-                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>

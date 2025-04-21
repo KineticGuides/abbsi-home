@@ -27,54 +27,54 @@
             </button>
         }
 
-        @if (path=='my-protocols') {
-            <button class="btn btn-secondary m-2" [routerLink]="['/my-protocols']"><div class="icon">
+        @if (path=='my-subscriptions') {
+            <button class="btn btn-secondary m-2" [routerLink]="['/my-subscriptions']"><div class="icon">
                 <i class="bi bi-bag-check"></i>
-              </div>Protocols
+              </div>Subscriptions
             </button>
         }
-        @if (path!='my-protocols') {
-                <button class="btn btn-outline-primary m-2" [routerLink]="['/my-protocols']"><div class="icon">
+        @if (path!='my-subscriptions') {
+                <button class="btn btn-outline-primary m-2" [routerLink]="['/my-subscriptions']"><div class="icon">
                     <i class="bi bi-bag-check"></i>
-                  </div>Protocols
+                  </div>Subscriptions
                 </button>
             }
 
             @if (path=='my-orders') {
                 <button class="btn btn-secondary m-2" [routerLink]="['/my-orders']"><div class="icon">
-                    <i class="bi bi-bag-check"></i>
+                    <i class="bi bi-truck"></i>
                   </div>Orders
                 </button>
             }
         @if (path!='my-orders') {
             <button class="btn btn-outline-primary m-2" [routerLink]="['/my-orders']"><div class="icon">
-                <i class="bi bi-bag-check"></i>
+                <i class="bi bi-truck"></i>
               </div>Orders
             </button>
         }
 
         @if (path=='my-visits') {
             <button class="btn btn-secondary m-2" [routerLink]="['/my-visits']"><div class="icon">
-                <i class="bi bi-bag-check"></i>
+                <i class="bi bi-pin-map"></i>
               </div>Visits
             </button>
         }
         @if (path!='my-visits') {
             <button class="btn btn-outline-primary m-2" [routerLink]="['/my-visits']"><div class="icon">
-                <i class="bi bi-bag-check"></i>
+                <i class="bi bi-pin-map"></i>
               </div>Visits
             </button>
         }
 
         @if (path=='my-labs') {
             <button class="btn btn-secondary m-2" [routerLink]="['/my-labs']"><div class="icon">
-                <i class="bi bi-bag-check"></i>
+                <i class="bi bi-clipboard-data"></i>
               </div>Labs
             </button>
         }
         @if (path!='my-labs') {
             <button class="btn btn-outline-primary m-2" [routerLink]="['/my-labs']"><div class="icon">
-                <i class="bi bi-bag-check"></i>
+                <i class="bi bi-clipboard-data"></i>
               </div>Labs
             </button>
         }

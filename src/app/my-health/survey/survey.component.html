@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="card">
+        @if (path!='') {
+        <div class="card-header">
+            <h4 style="font-size: 18px;"><ng-content></ng-content></h4>
+        </div>
+        <div class="card-body">
+            <table class="table custom-row-boder">
+         <tbody style="margin-top:30px;">
+    @for (m of data.questions; track m.id) {
+        <tr style="height: 40px; padding-top: 10px;">
+            <td>
+                <span  style="height: 40px;">{{ m.question}}</span>
+            </td>
+            <td style="width:280px">
+                <div class="card mb-0">
+                    <div class="card-body">
+                      <div class="form-check form-check-inline">
+                        <input [ngModel]="data.formData['a'+m.id]" class="form-check-input" type="radio" [name]="'a'+m.id" [id]="'a'+m.id" value="yes" (change)="onRadioChange($event,11)">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input [ngModel]="data.formData['a'+m.id]" class="form-check-input" type="radio" [name]="'a'+m.id" [id]="'a'+m.id" value="no" (change)="onRadioChange($event,11)">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input [ngModel]="data.formData['a'+m.id]" class="form-check-input" type="radio" [name]="'a'+m.id"  [id]="'a'+m.id" value="dnk" (change)="onRadioChange($event,11)">
+                        <label class="form-check-label" for="inlineRadio2">Maybe</label>
+                      </div>
+                    </div>
+                  </div>
+            </td>
+        </tr>
+    }
+    <tr style="height: 40px; padding-top: 10px;">
+        <td>
+        </td>
+        <td style="text-align: right">
+            <button (click)="nextPage();" class="btn btn-primary">Next -></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+        </div>
+    }
+    @if(path=='') {
+    @if (isComplete()==false) {
+        <div class="row">
+            <div class="col-md-11 p-3 m-3">
+                <h4>Your Wellness Survey is Not Complete</h4>
+                <p>Please select a category from the graph or the "Conutine Survey" button to complete your health and wellness survey. Your health survey 
+                is used to determine what custom supplments, peptides, and medications are right for you.</p>
+            </div>
+         </div>
+         @if(isStarted()==true) {
+         <div class="row">
+            <div class="col-md-11 p-3 m-1" style="text-align: right;">
+                <button class="btn btn-primary" (click)="nextPage()">Continue Survey</button>
+            </div>
+         </div>
+        } 
+        @if(isStarted()==false) {
+            <div class="row">
+                <div class="col-md-11 p-3 m-1" style="text-align: right;">
+                    <button class="btn btn-primary" (click)="nextPage()">Begin Survey</button>
+                </div>
+             </div>
+        }
+    }
+    @if (isComplete()==true) {
+        <div class="row">
+            <div class="col-md-11 p-3 m-3">
+                <h4>Congratulations on Completing Your Wellness Survey</h4>
+                <p>Click the button below to view recommendations</p>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-11 p-3 m-3" style="text-align: right;">
+                <button class="btn btn-primary" [routerLink]="['/my-recommendations']">View Recommendations</button>
+            </div>
+         </div>
+    }
+}
+    </div>
+</div>

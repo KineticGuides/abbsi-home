@@ -50,7 +50,7 @@ export const routes: Routes = [
     { path: 'my-recommendations', component: MyRecommendationsComponent, resolve: { data: ResolverService} },
     { path: 'my-visits', component: MyVisitsComponent, resolve: { data: ResolverService} },
     { path: 'my-labs', component: MyLabsComponent, resolve: { data: ResolverService} },
-    { path: 'my-protocols', component: MyProtocolsComponent, resolve: { data: ResolverService} },
+    { path: 'my-subscriptions', component: MyProtocolsComponent, resolve: { data: ResolverService} },
     { path: 'login', component: LoginComponent },
     { path: 'how-it-works', component: HowItWorksComponent, resolve: { data: ResolverService} },
     { path: 'get-started', component: GetStartedComponent, resolve: { data: ResolverService} },

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd, Event as RouterEvent } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { NgZone } from '@angular/core';
 
 declare var bootstrap: any;
 
@@ -61,35 +62,30 @@ export class AppComponent  implements OnInit, AfterViewInit {
   showWrapper: boolean = true;
 
 
-  constructor(private router: Router, private _dataService: DataService) {
+  constructor(private router: Router, private _dataService: DataService, private zone: NgZone) {
     this.router.events
-    .pipe(filter((event: RouterEvent): event is NavigationEnd => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        // Change this logic based on your default route (e.g., '/home')
-        this.showWrapper = event.urlAfterRedirects === '/' 
-        || event.urlAfterRedirects === '/home'
-        || event.urlAfterRedirects === '/how-it-works'
-        || event.urlAfterRedirects === '/longevity'
-        || event.urlAfterRedirects === '/muscle-gain'
-        || event.urlAfterRedirects === '/mental-focus'
-        || event.urlAfterRedirects === '/belly-fat'
-        || event.urlAfterRedirects === '/stamina'
-        || event.urlAfterRedirects === '/stress-levels'
-        || event.urlAfterRedirects === '/weight-loss'
-        || event.urlAfterRedirects === '/immune-system'
-        || event.urlAfterRedirects === '/sexual-function'
-        || event.urlAfterRedirects === '/chronic-disease'
-        || event.urlAfterRedirects === '/appearance'
-        || event.urlAfterRedirects === '/lifestyle'
-        || event.urlAfterRedirects === '/supplements'
-        || event.urlAfterRedirects === '/peptides'
-        || event.urlAfterRedirects === '/medications'
-        || event.urlAfterRedirects === '/learn-supplements'
-        || event.urlAfterRedirects === '/learn-healthy-living'
-        || event.urlAfterRedirects === '/learn-peptides'
-        || event.urlAfterRedirects === '/find-physician'
+    .pipe(
+      filter(event => event instanceof NavigationEnd)
+    )
+    .subscribe(event => {
+      const navEnd = event as NavigationEnd;
+  
+      this.showWrapper = [
+        '/', '/home', '/how-it-works', '/longevity', '/muscle-gain',
+        '/mental-focus', '/belly-fat', '/stamina', '/stress-levels',
+        '/weight-loss', '/immune-system', '/sexual-function', '/chronic-disease',
+        '/appearance', '/lifestyle', '/supplements', '/peptides', '/medications',
+        '/learn-supplements', '/learn-healthy-living', '/learn-peptides',
+        '/login', '/find-physician'
+      ].includes(navEnd.urlAfterRedirects);
 
+          // Force scroll after Angular finishes rendering
+    this.zone.runOutsideAngular(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: 'auto' }); // try 'auto' for testing
       });
+    });
+    });
   }
 
   closeIt() {
@@ -103,7 +99,6 @@ export class AppComponent  implements OnInit, AfterViewInit {
       this.colData=data['colData'];
       this.keys = Object.keys(this.formData);
       this.values = Object.entries(this.formData);
-      console.log(this.data['formData'])
   }) 
 
   }
@@ -114,7 +109,6 @@ export class AppComponent  implements OnInit, AfterViewInit {
 
 
   toggleOpen(m:any) {
-    console.log(m)
      if (m.open=='Y') {
       m.open = 'N'
      } else {

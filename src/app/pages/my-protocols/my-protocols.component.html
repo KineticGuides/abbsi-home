@@ -3,149 +3,67 @@
         <div class="col-lg-12">   
             <div class="container-fluid">
                 <div class="card content-section mb-4">
-                    <app-nav-menu [path]="'my-protocols'"></app-nav-menu>
+                    <app-nav-menu [path]="'my-subscriptions'"></app-nav-menu>
                     <div class="card-body" style="min-height: 530px;">
-                        <h4>My Active Protocols</h4>
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="card m-2">
-                                    <div class="card-header">
-                                        <div class="row">
-                                            <div class="col-md-10 pt-2">
-                                                <h4 style="font-size: 16px;">Lifestyle Changes</h4>
-                                            </div>
-                                            <div class="col-md-2" style="text-align:right">
-                                                <button class="btn btn-outline-primary">Learn More</button>
-                                            </div>
-                                        </div>
+                            <div class="col-md-6">
+                                <h4>My Subscriptions</h4>
+                            </div>
+                            <div class="col-md-6" style="text-align: right;">
+                                <button class="btn btn-success m-2">Add Subscription</button>
+                                <button class="btn btn-outline-success m-2">Place One Time Order</button>
+                            </div>
+                        </div>
+                        <div class="card m-2">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-10 pt-2">
+                                        <h4 style="font-size: 16px;">Order History</h4>
                                     </div>
-                                    <div class="card-body">
-                                        <table class="table table-condensed">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Date
-                                                    </th>
-                                                    <th style="font-size: 13px;">
-                                                        Protocol
-                                                    </th>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Recheck<br>Date
-                                                    </th>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Status
-                                                    </th>
-                                                </tr>
-                                            </thead>
+                                    <div class="col-md-2" style="text-align:right">
 
-                                        </table>
                                     </div>
                                 </div>
-                                <div class="card m-2">
-                                    <div class="card-header">
-                                        <div class="row">
-                                            <div class="col-md-10 pt-2">
-                                                <h4 style="font-size: 16px;">Supplement Protocols</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img class="img img-fluid" src="assets/metformin.png" alt="product image">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="row mb-1" style="width:100%">
+                                            <div class="col-md-6">
+                                                Metformin
                                             </div>
-                                            <div class="col-md-2" style="text-align:right">
-                                                <button class="btn btn-outline-primary">Learn More</button>
+                                            <div class="col-md-6" style="text-align: right">
+                                                <button class="btn btn-light">Manage</button>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-condensed">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Date
-                                                    </th>
-                                                    <th style="font-size: 13px;">
-                                                        Protocol
-                                                    </th>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Reset<br>Date
-                                                    </th>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Status
-                                                    </th>
-                                                </tr>
-                                            </thead>
-
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="card m-2">
-                                    <div class="card-header">
                                         <div class="row">
-                                            <div class="col-md-10 pt-2">
-                                                <h4 style="font-size: 16px;">Peptide Protocols</h4>
+                                            <div class="col-md-4">
+                                                <p>Ordered: 04/15/25</p>
+                                                <p>Next Refill: 05/15/25</p>
+                                                <p>Shipped: 04/15/25</p>
+                                                <p>Shipping History</p>
                                             </div>
-                                            <div class="col-md-2" style="text-align:right">
-                                                <button class="btn btn-outline-primary">Learn More</button>
+                                            <div class="col-md-4">
+                                                <p>Medical Approval: Yes</p>
+                                                <p>Dosage Instructions:</p>
+                                                <p>Expires: 04/15/26</p>
+                                                <p>Status: Active</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p>Subscription: Yes</p>
+                                                <p>Programs: 3 months</p>
+                                                <p>Labs Due: 04/15/26</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-condensed">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Date
-                                                    </th>
-                                                    <th style="font-size: 13px;">
-                                                        Protocol
-                                                    </th>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Reset<br>Date
-                                                    </th>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Status
-                                                    </th>
-                                                </tr>
-                                            </thead>
-
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="card m-2">
-                                    <div class="card-header">
-                                        <div class="row">
-                                            <div class="col-md-10 pt-2">
-                                                <h4 style="font-size: 16px;">Medication Protocols</h4>
-                                            </div>
-                                            <div class="col-md-2" style="text-align:right">
-                                                <button class="btn btn-outline-primary">Learn More</button>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-condensed">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Date
-                                                    </th>
-                                                    <th style="font-size: 13px;">
-                                                        Recommendation
-                                                    </th>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Reset<br>Date
-                                                    </th>
-                                                    <th style="width:120px; font-size: 13px;">
-                                                        Status
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            </tbody>
-                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <div id="formstatusmessage" class="d-none"></div>
 </div>

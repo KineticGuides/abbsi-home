@@ -93,7 +93,7 @@ export class LoginComponent   implements OnInit {
     let formData: any = { "email": this.email, "password": this.password  }
         this._dataService.postData("post-web-login", formData).subscribe((data: any)=> { 
             if (data.error=="0") {
-              localStorage.setItem('uid',data.id);
+              localStorage.setItem('uid',data.uid);
               this._router.navigate(['/my-profile']);
             } else {
                 this.message=data.message              

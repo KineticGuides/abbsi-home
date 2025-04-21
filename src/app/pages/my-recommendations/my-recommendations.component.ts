@@ -90,6 +90,13 @@ export class MyRecommendationsComponent  implements OnInit {
 
   }
 
+  toggleM(m: any) {
+    if (m.m=='Y') {
+      m.m = 'N'
+    } else {
+      m.m = 'Y'
+    }
+  }
 
 
   postForm(): void {

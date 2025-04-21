@@ -1,0 +1,14 @@
+.card-title {
+    font-weight: 600;
+  }
+  .goal-badge {
+    background-color: #e9f7ef;
+    color: #28a745;
+    border-radius: 1rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+  }
+  .metric-up { color: green; }
+  .metric-down { color: red; }
+  .metric-stable { color: #6c757d; }

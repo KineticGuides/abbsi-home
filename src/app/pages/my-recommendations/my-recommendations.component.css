@@ -1,0 +1,18 @@
+.benefit-tag {
+    display: inline-block;
+    padding: 0.35em 0.75em;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    margin: 0.2em;
+    font-weight: 500;
+  }
+
+  .primary-benefit {
+    background-color: #d4edda; /* Light green */
+    color: #155724;
+  }
+
+  .secondary-benefit {
+    background-color: #fff3cd; /* Light yellow */
+    color: #856404;
+  }

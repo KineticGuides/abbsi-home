@@ -106,7 +106,7 @@
                             </li>
                             <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/find-physician']" (click)="closeOffcanvas()">Find a Physician</a></li> 
                             <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/get-started']" (click)="closeOffcanvas()">Get Started</a></li>
-                            <li [hidden]="showWrapper==false" class="nav-item"><a class="nav-link" [routerLink]="['/login']" (click)="closeOffcanvas()">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" [routerLink]="['/login']" (click)="closeOffcanvas()">Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -116,6 +116,7 @@
   <!-- Header Navbar ends here  -->
 
     <!-- Banner Main Starts here  -->
+ 
     <router-outlet></router-outlet>
 
     <section [hidden]="showWrapper==false">
